@@ -1,0 +1,88 @@
+#### Beispiele
+SELECT *
+WHERE {
+?object a dbo:Software;
+rdfs:label ?label FILTER(LANG(?label) = "en")} 
+LIMIT 10000
+
+SELECT *
+WHERE {
+?object rdf:type dbo:Software;
+rdfs:label ?label FILTER(LANG(?label) = "en")} 
+LIMIT 10000
+
+SELECT *
+WHERE {
+?object dct:subject dbc:Logical_link_control;
+rdfs:label ?label FILTER(LANG(?label) = "en")} 
+LIMIT 10000
+
+###BWL###
+SELECT *
+WHERE {
+{?object dct:subject dbc:Management; rdfs:label ?label} 
+UNION 
+{?object dct:subject dbc:Business; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Macroeconomics; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Microeconomics; rdfs:label ?label}
+FILTER(LANG(?label) = "en")
+} 
+LIMIT 10000
+
+###IT###
+SELECT *
+WHERE {
+{?object dct:subject dbc:Software; rdfs:label ?label} 
+UNION 
+{?object dct:subject dbc:Computer_science; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Algorithms; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Software_engineering; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Software_development; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Web_development; rdfs:label ?label}
+FILTER(LANG(?label) = "en")
+} 
+LIMIT 10000
+
+###Physik###
+SELECT *
+WHERE {
+{?object dct:subject dbc:Physics; rdfs:label ?label} 
+UNION 
+{?object dct:subject dbc:Concepts_in_physics; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Physical_systems; rdfs:label ?label}
+FILTER(LANG(?label) = "en")
+} 
+LIMIT 10000
+
+###Psychology###
+SELECT *
+WHERE {
+{?object dct:subject dbc:Psychology; rdfs:label ?label} 
+UNION 
+{?object dct:subject dbc:Human_behavior; rdfs:label ?label}
+FILTER(LANG(?label) = "en")
+} 
+LIMIT 10000
+
+###Medicine###
+SELECT *
+WHERE {
+{?object dct:subject dbc:Medical_Terminology; rdfs:label ?label} 
+UNION 
+{?object dct:subject dbc:Medicine; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Health_care; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Health_sciences; rdfs:label ?label}
+UNION
+{?object dct:subject dbc:Diseases_and_disorders; rdfs:label ?label}
+FILTER(LANG(?label) = "en")
+} 
+LIMIT 10000
